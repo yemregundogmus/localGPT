@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS -->
 
-    <link rel="icon" type="image" href="static\social_icons\favicon.png" />
+    <link rel="icon" type="image" href="https://dashboard.summarify.io/favicon.ico" />
     <script src="static\dependencies\jquery\3.6.0\jquery.min.js"></script>
     <script src="static\dependencies\bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
     <link
@@ -14,7 +14,7 @@
       href="static\dependencies\bootstrap-5.1.3-dist\css\bootstrap.min.css"
     />
 
-    <title>localGPT</title>
+    <title>Summarify PrivateGPT</title>
   </head>
   <script>
     function openFileSelection() {
@@ -77,7 +77,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
     body {
-      background-image: linear-gradient(90deg, #09203f, #0057ff);
+      background-color: #0049AF;
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -148,14 +148,14 @@
       top: 0px;
       border: none;
       height: 45px;
-      background-color: #ff0059;
+      background-color: #0049AF;
       color: #fff;
       width: 90px;
       border-radius: 4px;
     }
 
     .search-2 button:hover {
-      background: #ff0059;
+      background: #0049AF;
       color: #ffffff;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -167,7 +167,7 @@
       top: 0px;
       border: none;
       height: 45px;
-      background-color: #ff0059;
+      background-color: #0049AF;
       color: #fff;
       width: 90px;
       border-radius: 4px;
@@ -192,21 +192,21 @@
     .default_button {
       border: none;
       height: 45px;
-      background-color: #ff0059;
+      background-color: #0049AF;
       color: #fff;
       width: 90px;
       border-radius: 4px;
     }
 
     .default_button:hover {
-      background: #ff0059;
+      background: #0049AF;
       color: #ffffff;
       transition: all 0.2s ease;
       cursor: pointer;
     }
 
     .upload_button:hover {
-      background: #ff0059;
+      background: #0049AF;
       color: #ffffff;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -218,14 +218,14 @@
       top: 0px;
       border: none;
       height: 45px;
-      background-color: #ff0059;
+      background-color: #0049AF;
       color: #fff;
       width: 90px;
       border-radius: 4px;
     }
 
     .tutorial_button:hover {
-      background: #ff0059;
+      background: #0049AF;
       color: #ffffff;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -281,19 +281,19 @@
 
     .accordion-button:focus {
       z-index: 3;
-      border-color: #ff0059;
+      border-color: #0049AF;
       box-shadow: 0 0 0 0.25rem rgba(153, 50, 168, 0.25);
     }
 
     .accordion-button:not(.collapsed) {
-      color:#ff0059;
+      color:#0049AF;
       background-color: #f5b3cb;
       box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
     }
   </style>
   <body>
     <div class="container">
-      <div class="titlegpt">LocalGPT</div>
+      <div class="titlegpt">SumPrivateGPT</div>
       <div class="search">
         <div class="row">
           <div class="col-md-12">
@@ -309,17 +309,17 @@
                   data-bs-toggle="modal"
                   data-bs-target="#tutorial_modal"
                 >
-                  Tutorial
+                  Yardım
                 </button>
                 <i class="bx bxs-map"></i>
                 <input
                   type="text"
                   name="user_prompt"
                   id="searchInput"
-                  placeholder="Tell a summary of what you want to know?"
+                  placeholder="Ne öğrenmek istiyorsunuz?"
                 />
                 <button type="button" onclick="submitPromptForm()">
-                  Search
+                  Sor
                 </button>
               </form>
               <form
@@ -340,7 +340,7 @@
                   class="upload_button"
                   onclick="openFileSelection()"
                 >
-                  Upload
+                  Dosya Yükle
                 </button>
               </form>
             </div>
@@ -377,21 +377,21 @@
               id="response_modal"
               style="color: #292b2c"
             >
-              Response
+              Cevap
             </h5>
           </div>
           <div class="modal-body text-center" style="color: #292b2c">
-            <strong>Search</strong>
+            <strong>Sorunuz</strong>
             <br />
             <p>{{response_dict['Prompt']}}</p>
 
-            <strong>Answer</strong>
+            <strong>Cevap</strong>
             <br />
             <p style="margin-left: 5%; margin-right: 5%">
               {{response_dict['Answer']}}
             </p>
 
-            <strong>Sources</strong>
+            <strong>Kaynaklar</strong>
             <div
               class="accordion"
               id="accordionExample"
@@ -443,7 +443,7 @@
               class="default_button"
               data-bs-dismiss="modal"
             >
-              Close
+              Kapat
             </button>
           </div>
         </div>
@@ -467,11 +467,11 @@
               class="modal-title justify-content-center"
               id="responseModalLabel"
             >
-              Generating Response
+              Sonuç Oluşturuluyor.
             </h5>
           </div>
           <div class="modal-body text-center">
-            <p>Please wait...</p>
+            <p>Lütfen bekleyiniz...</p>
           </div>
         </div>
       </div>
@@ -492,29 +492,27 @@
               class="modal-title justify-content-center"
               id="uploadModalLabel"
             >
-              File Upload Confirmation
+              Dosya Yüklemeyi Onayla
             </h5>
           </div>
           <div class="modal-body margin-left: 5%; text-align: left;">
             <ul>
               <li>
-                Click
-                <span style="background-color: #ff0059; color: white">Add</span> if
-                you want to add the documents selected to your pre-existing
-                knowledge base.
+                Tıkla
+                <span style="background-color: #0049AF; color: white">Add</span> if
+                Seçilen belgeleri, zaten mevcut olan bilgi tabanınıza ekle
               </li>
               <br />
               <li>
-                Click
-                <span style="background-color: #ff0059; color: white">Reset</span>
-                if you want to reset your knowledge base, and then use your new
-                documents as your new knowledge base.
+                Tıkla
+                <span style="background-color: #0049AF; color: white">Reset</span>
+                Bilgi tabanını sıfırlayarak yeni belge ekle
               </li>
               <br />
               <li>
-                Click
+                Tıkla
                 <span style="background-color: gray; color: white">Cancel</span>
-                if you don't want to make any changes.
+                Değişiklik yapma
               </li>
             </ul>
           </div>
@@ -526,7 +524,7 @@
               class="default_button"
               onclick="submitForm('add')"
             >
-              Add
+              Ekle
             </button>
             <button
               type="submit"
@@ -535,10 +533,10 @@
               class="default_button"
               onclick="submitForm('reset')"
             >
-              Reset
+              Sıfırla
             </button>
             <button type="button" class="cancel_button" data-bs-dismiss="modal">
-              Cancel
+              İptal Et.
             </button>
           </div>
         </div>
@@ -557,10 +555,10 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header justify-content-center">
-            <h5 class="modal-title">Ingesting Documents...</h5>
+            <h5 class="modal-title">Belgeler içe aktarılıyor...</h5>
           </div>
           <div class="modal-body text-center">
-            <p>Please wait while we ingest the documents.</p>
+            <p>Belgeleriniz içe aktarılırken lütfen bekleyiniz.</p>
           </div>
         </div>
       </div>
@@ -582,97 +580,34 @@
               id="tutorial_modal"
               style="color: #292b2c"
             >
-              Tutorial
+              Yardım
             </h5>
           </div>
           <div class="modal-body" style="color: #292b2c">
-            <strong style="margin-left: 5%; text-align: left">About</strong>
+            
             <br />
-            <p style="text-align: justify; margin-left: 5%; margin-right: 5%">
-              Introducing a cutting-edge application that empowers users to
-              leverage the capabilities of a language model, even in the absence
-              of an internet connection. This advanced tool serves as an
-              indispensable resource for accessing information beyond the
-              confines of traditional language model tools such as chatGPT.
-              <br /><br />
-              One of the key advantages of this application is the preservation
-              of data control. This feature becomes particularly valuable when
-              handling sensitive data that must remain within the confines of an
-              organization or personal documents that warrant utmost
-              confidentiality, eliminating the need to transmit information
-              through third-party channels.
-              <br /><br />
-              Seamlessly integrating personal documents into the system is
-              effortless, ensuring a smooth user experience. Whether in the form
-              of text, PDF, CSV, or Excel files, users can conveniently provide
-              the desired information for inquiry. The application swiftly
-              processes these documents, effectively creating a comprehensive
-              database for the model to leverage, enabling accurate and
-              insightful responses.
-              <br /><br />
-              A notable benefit of this approach lies in its efficient resource
-              utilization. Unlike the resource-intensive retraining processes
-              employed by alternative methods, the ingestion of documents within
-              this application demands significantly less compute power. This
-              efficiency optimization allows for a streamlined user experience,
-              saving both time and computational resources.
-              <br /><br />
-              Discover the unparalleled capabilities of this technical marvel,
-              as it enables users to tap into the full potential of language
-              models, all while operating offline. Experience a new era of
-              information access, bolstering productivity and expanding
-              possibilities. Embrace this powerful tool and unlock the true
-              potential of your data today.
-            </p>
             <strong style="margin-left: 5%; text-align: left"
-              >Upload Documents</strong
+              >Doküman Yükleme</strong
             >
             <br />
-            <p
-              style="
-                line-height: 1.75;
-                margin-left: 5%;
-                margin-right: 5%;
-                text-align: left;
-              "
-            >
-              1. To upload documents for the app to ingest as its new knowledge
-              base click the
-              <span style="background-color: #ff0059; color: white">Upload</span>
-              button.
-              <br />
-              2. Select the documents you want to serve as your new knowledge
-              base to converse with.
-              <br />
-              3. Then you will be prompted with a confirmation to either
-              <span style="background-color: #ff0059; color: white">Add</span> the
-              documents to your knowledge base,
-              <span style="background-color: #ff0059; color: white">Reset</span>
-              your knowledge base with the documents you just selected, or
-              <span style="background-color: gray; color: white">Cancel</span>
-              the upload.
-              <br />
-              4. There will be a short wait time as the documents get ingested
-              into the vector database as your new knowledge base.
-            </p>
             <a
               href="static/document_examples/constitution.pdf"
               style="margin-left: 5%"
               download
             >
               <button class="default_button" style="width: auto">
-                Example Constitution
+                Örnek PDF - Anayasa
               </button>
             </a>
             <a href="static/document_examples/news_articles.zip" download>
               <button class="default_button" style="width: auto">
-                Example News Articles
+                Örnek PDF - Haber
               </button>
             </a>
 
             <br />
             <br />
-            <strong style="margin-left: 5%; text-align: left">Searching</strong>
+            <strong style="margin-left: 5%; text-align: left">Arama</strong>
             <p
               style="
                 line-height: 1.75;
@@ -681,23 +616,20 @@
                 text-align: left;
               "
             >
-              1. In order to ask a question, type a question into the search bar
-              like:
+              1. Soru sormak için arama çubuğuna şöyle bir soru yazın.
               <br />
               2.
               <span style="background-color: gray; color: white"
-                >Give me a summary of the documents</span
+                >Dokümanlar hakkında bir özetleme yap.</span
               >
               <br />
-              3. Hit enter on your keyboard or click
-              <span style="background-color: #ff0059; color: white">Search</span>
+              3. Klavyedeki Enter tuşuna veya sor butonuna tıklayın.
+              <span style="background-color: #0049AF; color: white">Sor</span>
               <br />
-              4. Wait while the LLM model consumes the prompt and prepares the
-              answer.
+              4. LLM Modelinin dokümanlar içerisinden soruyu araması için biraz bekleyin.
               <br />
-              5. Once done, it will print the answer and the 4 sources it used
-              as context from your documents; you can then ask another question
-              without re-running the script, just wait for the prompt again.
+              5. İşlem tamamlandığında size sonucu ve sonucu bulurken kullandığı 4
+              farklı kaynağı gösterecek. 
             </p>
             <br />
           </div>
@@ -707,7 +639,7 @@
               class="default_button"
               data-bs-dismiss="modal"
             >
-              Close
+              Kapat
             </button>
           </div>
         </div>

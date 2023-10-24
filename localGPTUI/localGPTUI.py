@@ -27,7 +27,7 @@ def home_page():
             response = requests.post(main_prompt_url, data={"user_prompt": user_prompt})
             print(response.status_code)  # print HTTP response status code for debugging
             if response.status_code == 200:
-                # print(response.json())  # Print the JSON data from the response
+                print(response.json())  # Print the JSON data from the response
                 return render_template("home.html", show_response_modal=True, response_dict=response.json())
         elif "documents" in request.files:
             delete_source_url = f"{API_HOST}/delete_source"  # URL of the /api/delete_source endpoint
